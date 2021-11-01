@@ -1,0 +1,142 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+}
+.orientation-message {
+    display: none;
+}
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;    
+    background: linear-gradient(rgb(0, 119, 255), rgb(95, 210, 255));
+    /* background: linear-gradient(rgb(130, 226, 255), rgb(117, 123, 126)); */
+    height: 100%;
+}
+#message {
+    display: none;
+    width: 400px;
+    height: 50px;
+    margin-bottom: 20px;
+    padding-top: 10px;
+    font-size: 20px;    
+    border-radius: 5px;
+    text-align: center;  
+    border: 2px solid rgb(255,0,0);
+    background-color: rgb(255,150,150);
+    color: rgb(255,0,0);  
+    box-shadow: 0 0 10px rgb(255,0,0);
+}
+.card-container {
+    border: 3px solid rgb(179, 179, 179);
+    background-color: rgba(202, 202, 202, 0.2);
+    border-radius: 10px;
+    padding: 15px 10px;
+    box-shadow: 0 0 10px rgb(179, 179, 179);
+    color: rgb(240,240,240);
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 400px;
+    height: 250px;
+    padding-top: 30px;
+}
+
+.card h1, h3 {
+    text-align: center;
+}
+
+#temperature {
+    font-size: 50px;
+}
+#icon {
+    display: flex;
+    justify-content: center;    
+}
+#humidity, #wind {
+    font-size: 20px;
+}
+.card ul {
+    list-style: none;
+    text-align: center;
+}
+
+#weather-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 10px;
+}
+input[type="text"], button[type="submit"] {
+    width: 90%;
+    font-size: 20px;
+    border-radius: 5px;
+    display: block;   
+    margin: 10px auto; 
+    padding: 3px;
+}
+
+input[type="text"]:invalid {
+    box-shadow: 0 0 10px red;
+}
+input[type="text"]:valid {
+    box-shadow: 0 0 10px green;
+}
+
+button[type="submit"] {
+    border: none;
+    background-color: rgb(255, 154, 71);
+    padding: 15px;
+    color: white;
+}
+
+button[type="submit"]:hover {
+    cursor: pointer;
+    background-color: rgb(255, 154, 71, 0.9);
+}
+/* Styles responsive */
+@media screen and (max-width: 480px) and (orientation: portrait) {
+    .container {
+        width: 100%;
+    }
+    #message {
+        width: 80%;
+    }
+    .card-container {
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        flex-direction: column;
+    }
+    .card {
+        width: 100%;
+    }
+    #location, #description, #temperature {
+        width: 100%;        
+    }
+    #temperature {
+        font-size: 40px;
+    }
+}
+@media screen and (max-width: 800px) and (orientation: landscape) {    
+    .card-container {
+        display: none;
+    }
+    .orientation-message{
+        width: 100%;
+        display: block
+    }
+    .orientation-message h2{
+        text-align: center;
+    }
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather app</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div id="message">Ciudad no encontrada</div>
+        <div class="card-container">
+            <div class="card">
+                <h1 id="location">Location</h1>
+                <h3 id="description">Description</h3>
+                <h3 id="temperature">Temperature</h3>
+                <i id="icon"><img id="image" src="./img/earth.png"></i>
+                <ul>
+                    <li id="humidity">Humidity</li>
+                    <li id="wind">Wind</li>
+                </ul>
+            </div>
+            <div class="card">
+                <form action="#" id="weather-form">
+                    <input type="text" name="city" id="city" placeholder="Ciudad" autofocus required pattern="[A-Za-z]{1,15}" autofocus>
+                    <input type="text" name="countryCode" id="countryCode" placeholder="Código del pais" required pattern="[A-Za-z]{2}">
+                    <button type="submit" id="submitBtn" onclick="setFocus()">Consultar clima</button>
+                </form>
+            </div>
+        </div>
+        <div class="orientation-message">
+            <h2>Por favor, gira tu dispositivo a vertical</h2>
+        </div>
+    </div>
+</body>
+<script src="./js/weather.js"></script>
+</html>
