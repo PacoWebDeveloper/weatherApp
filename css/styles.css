@@ -16,8 +16,7 @@ html, body {
     align-items: center;
     justify-content: center;
     flex-direction: column;    
-    background: linear-gradient(rgb(0, 119, 255), rgb(95, 210, 255));
-    /* background: linear-gradient(rgb(130, 226, 255), rgb(117, 123, 126)); */
+    background: linear-gradient(rgb(0, 119, 255), rgb(95, 210, 255));   
     height: 100%;
 }
 #message {
@@ -42,7 +41,7 @@ html, body {
     box-shadow: 0 0 10px rgb(179, 179, 179);
     color: rgb(240,240,240);
 }
-.card {
+.card-data, .card-input {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -51,7 +50,13 @@ html, body {
     padding-top: 30px;
 }
 
-.card h1, h3 {
+.card-data {
+    height: 0;
+    overflow: hidden;
+    transform: translateX(400px);
+}
+
+.card-data h1, h3 {
     text-align: center;
 }
 
@@ -65,7 +70,7 @@ html, body {
 #humidity, #wind {
     font-size: 20px;
 }
-.card ul {
+.card-data ul {
     list-style: none;
     text-align: center;
 }
@@ -118,7 +123,7 @@ button[type="submit"]:hover {
         align-content: center;
         flex-direction: column;
     }
-    .card {
+    .card-data, .card-input {
         width: 100%;
     }
     #location, #description, #temperature {

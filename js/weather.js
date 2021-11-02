@@ -47,7 +47,7 @@ submitBtn.addEventListener('click', async (e) => {
     } 
     else {
         setErrorMessage(false);
-        
+        cardDataAnimation();        
         setWeatherData(weatherData);
     }
     
@@ -131,4 +131,20 @@ function setIconAndBackground(description) {
 function setFocus() {
     let input = document.querySelector('#city');
     input.focus();
+}
+
+function cardDataAnimation() {
+    let cardData = document.querySelector('.card-data');
+
+    if(cardData.style.height == ''){
+        cardData.style.height = '300px';
+        cardData.style.transition = '300ms';
+        setInterval(() => {
+            cardData.style.transform = 'translateX(0)';
+            cardData.style.transition = '300ms';
+        }, 300)
+    } else {
+        cardData.style.transform = 'scale(0.2)';
+        cardData.style.transition = '300ms';
+    }
 }
